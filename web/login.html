@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/iofrm-theme19.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id"
+        content="597849125326-6m9u4g0reo8mbb8t600rfhmn23vgs1ll.apps.googleusercontent.com">
+</head>
+
+<body>
+    <div class="form-body without-side">
+        <div class="website-logo">
+            <a href="MainController">
+                <div class="logo">
+                    <img class="" src="./assets/images/logo.png" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+                    <img src="./assets/images/graphic3.svg" alt="">
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Login to account</h3>
+                        <form action="MainController" method="POST">
+                            <input class="form-control" type="text" name="userID" placeholder="UserID" required>
+                            <input class="form-control" type="password" name="password" placeholder="Password" required>
+                            <div class="g-recaptcha" data-sitekey="6LddSwkqAAAAALRi-RgIrt55UiMhk75tr2rQfTqu"></div>
+                            <div class="form-button">
+                                <button name="action" value="Login" id="submit" type="submit"
+                                    class="ibtn">Login</button>
+                            </div>
+                        </form>
+                        <div class="other-links">
+                            <div class="text">Or login with</div>
+                            <a
+                                href="https://accounts.google.com/o/oauth2/auth?scope=email profile openid&redirect_uri=http://localhost:8080/BeautyWebsite/MainController?action=LoginWithGoogle&response_type=code&client_id=597849125326-6m9u4g0reo8mbb8t600rfhmn23vgs1ll.apps.googleusercontent.com&approval_prompt=force">
+                                <i class="fab fa-google"></i>
+                                Google
+                            </a>
+                        </div>
+                        <div class="page-links">
+                            <a href="register.html">Register new account</a>
+                        </div>
+                        <div class="mt-4">
+                            <form action="MainController" method="POST">
+                                <input type="submit" name="action" value="LastUser" class="btn btn-link"
+                                    style="color: #fff; background-color: #007bff; border-color: #007bff;">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+    </script>
+</body>
+
+</html>

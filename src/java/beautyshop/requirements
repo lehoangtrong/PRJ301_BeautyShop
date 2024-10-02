@@ -1,0 +1,19 @@
+1. Guest:
+ Login by account                   -DONE
+ Register an account (is user)      -DONE
+ Search, view product               -DONE
+ Add, update, remove cart           -DONE
+ Login by google account            -DONE
+ Recaptcha with google              -DONE
+    CLIENT
+    SECUR
+2. User
+ Search, view product               -DONE
+ Add, update, remove cart           -DONE
+ Logout                             -DONE
+ View, manage orders                -DONE
+ Checkout                           -DONE
+
+3. Admin|Manager:
+ Managing product                  -DONE
+ Managing accounts                 -DONE
